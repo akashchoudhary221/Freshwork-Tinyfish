@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f4f0" />
+  <meta name="description" content="A fresh, live job search across company career pages and job boards." />
+  <title>Freshwork — your next role, found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Freshwork home"><span class="brand-mark">f<span>.</span></span><span>freshwork</span></a>
+      <div class="top-meta"><span class="live-dot"></span><span id="connectionLabel">Live search, ready when you are</span></div>
+      <button class="text-button" id="aboutButton">How it works <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> LESS SCROLLING. MORE GETTING HIRED.</div>
+          <h1>Your next role<br />is <span class="serif-accent">out there.</span></h1>
+          <p>One thoughtful search across company career pages and job boards. Matched to you, refreshed live.</p>
+        </div>
+        <div class="hero-note"><span class="note-star">✳</span><span>Good opportunities<br />don't wait around.</span><span class="note-arrow">↘</span></div>
+        <div class="hero-squiggle" aria-hidden="true">〰</div>
+      </section>
+
+      <div class="workspace">
+        <aside class="preferences card">
+          <div class="panel-heading"><div><span class="section-index">01 / YOUR SEARCH</span><h2>Set your sights</h2></div><span class="tune-icon">✳</span></div>
+          <form id="searchForm">
+            <label class="field-label" for="role">What role are you after?<span class="required">*</span></label>
+            <input class="text-input" id="role" name="role" placeholder="e.g. Product designer" required />
+
+            <label class="field-label" for="location">Where would you like to work?</label>
+            <div class="input-icon-wrap"><span class="input-icon">⌖</span><input class="text-input with-icon" id="location" name="location" placeholder="City, country, or remote" /></div>
+
+            <label class="field-label" for="seniority">What level feels right?</label>
+            <div class="select-wrap"><select class="text-input" id="seniority" name="seniority"><option value="">Any level</option><option>Internship</option><option>Entry level</option><option>Junior</option><option>Mid level</option><option>Senior</option><option>Staff</option><option>Lead</option></select><span class="select-arrow">⌄</span></div>
+
+            <label class="field-label" for="keywords">A few things you care about</label>
+            <input class="text-input" id="keywords" name="keywords" placeholder="React, climate, early-stage…" />
+            <span class="field-hint">Separate keywords with commas</span>
+
+            <div class="field-label source-label">Search across</div>
+            <div class="source-options">
+              <label class="source-option"><input type="checkbox" name="source" value="greenhouse" checked /><span class="checkbox-mark"></span>Greenhouse</label>
+              <label class="source-option"><input type="checkbox" name="source" value="lever" checked /><span class="checkbox-mark"></span>Lever</label>
+              <label class="source-option"><input type="checkbox" name="source" value="ashby" checked /><span class="checkbox-mark"></span>Ashby</label>
+              <label class="source-option"><input type="checkbox" name="source" value="linkedin" checked /><span class="checkbox-mark"></span>LinkedIn</label>
+              <label class="source-option"><input type="checkbox" name="source" value="indeed" checked /><span class="checkbox-mark"></span>Indeed</label>
+            </div>
+            <button class="search-button" type="submit"><span class="button-spark">✳</span><span>Find my next role</span><span class="button-arrow">↗</span></button>
+            <p class="wallet-note">Search and Fetch are free. Each search runs one Agent pass on the top match. Agent usage is $0.016 per step; actual cost depends on steps used.</p>
+            <p class="privacy-note"><span>⌑</span> Your preferences stay in this browser.</p>
+          </form>
+        </aside>
+
+        <section class="results-area" aria-live="polite">
+          <div class="results-topline"><div><span class="section-index">02 / THE GOOD STUFF</span><h2 id="resultsTitle">A little room<br />for <span class="serif-accent">what's next.</span></h2></div><div class="results-decoration">✳<span>fresh<br />finds</span></div></div>
+          <div class="results-toolbar" id="resultsToolbar" hidden>
+            <div><strong id="resultCount">0</strong><span> roles worth a look</span></div>
+            <label class="sort-control">SORT BY <select id="sortSelect"><option value="match">Best match</option><option value="newest">Newest found</option><option value="company">Company A–Z</option></select></label>
+          </div>
+          <div id="resultsContent" class="results-content">
+            <div class="empty-state" id="emptyState"><div class="empty-illustration"><span>✳</span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="orbit orbit-three"></span></div><h3>There's something good<br />with your name on it.</h3><p>Tell us a bit about the role you're after.<br />We'll go looking across the live web.</p><div class="empty-steps"><span><b>1</b> Tell us what fits</span><i></i><span><b>2</b> We search live</span><i></i><span><b>3</b> You make a move</span></div></div>
+          </div>
+          <div class="results-footer" id="resultsFooter" hidden><span>Freshly gathered across the web</span><span id="refreshTime"></span></div>
+        </section>
+      </div>
+
+      <section class="how-section" id="howItWorks">
+        <div class="how-title"><span class="section-index">THE SHORT VERSION</span><h2>A little web magic.<br /><span class="serif-accent">A lot more focus.</span></h2></div>
+        <div class="how-grid">
+          <article class="how-card"><span class="how-number">01</span><span class="how-icon">⌕</span><h3>Search the live web</h3><p>TinyFish Search looks for current openings across the career pages and job boards you picked.</p><span class="api-tag">TINYFISH SEARCH</span></article>
+          <article class="how-card"><span class="how-number">02</span><span class="how-icon">↗</span><h3>Read what matters</h3><p>TinyFish Fetch opens promising listings to surface clean details, even on dynamic career sites.</p><span class="api-tag">TINYFISH FETCH</span></article>
+          <article class="how-card"><span class="how-number">03</span><span class="how-icon">✳</span><h3>Make it yours</h3><p>We score and deduplicate the results. One Agent run analyzes your top match; ask it to unpack other roles too.</p><span class="api-tag">TINYFISH AGENT</span></article>
+        </div>
+        <div class="tinyfish-credit"><span class="tinyfish-dot"></span> A student build for the <strong>TinyFish × TechnoJam</strong> challenge <span class="credit-star">✳</span></div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="brand small-brand" href="#top"><span class="brand-mark">f<span>.</span></span>freshwork</a><span>Made for humans in between their next things.</span><a href="#howItWorks">Made with TinyFish ↗</a></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
