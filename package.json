@@ -1,0 +1,8 @@
+{
+  "name": "freshwork-job-finder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A live job finder powered by TinyFish Search, Fetch and Agent",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
